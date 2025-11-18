@@ -553,7 +553,7 @@ echo "
         if [[ -f "$xpm_file" ]]; then
             tmp="${xpm_file%.xpm}.png"
             magick "$xpm_file" "$tmp"
-            magick "$tmp" -set option:modulate:colorspace hsl -modulate 100,0,100 "$tmp"
+            magick "$tmp" -colorspace Gray -contrast-stretch 2%x2% "$tmp"
             magick "$tmp" "$xpm_file"
             rm -f "$tmp"
             

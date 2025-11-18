@@ -190,8 +190,11 @@ I also edit the file themerc in xfce/ since it determines the color of test in y
 # Credits
 
 **RedmondXP**:[matthewmx86](https://github.com/matthewmx86/RedmondXP)
+
 **color_extractor**: [Robinoscarsson](https://github.com/robinoscarsson/color_extractor)  
+
 **the numbers for the hue conversion**: [r0d3r1ck0rd0n3z](https://github.com/r0d3r1ck0rd0n3z/ImageMagick-Modulate-Calculator/tree/master)
+
 **Hex to HSL Coversion**: [z3rOR0ne](https://codeberg.org/z3rOR0ne/dyetide)
 
 

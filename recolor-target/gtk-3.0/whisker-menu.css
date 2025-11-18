@@ -16,7 +16,7 @@
 /*This is the weird line of stay pixels*/
 #whiskermenu-window .title-area {
   min-height: 55px;
-  color: @selected_fg_color;
+  color: @custom_text_color;
 
 /*This is the text shadow on the title bar, if you want to add it back replace @fg_color with a different hex code in THIS CODE not in gtk.css*/
   /*text-shadow: 2px 2px @fg_color;*/

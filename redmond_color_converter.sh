@@ -549,11 +549,18 @@ echo "
     )
 
     for file in "${grayscale_files[@]}"; do
+        RedmondXPxpm="RedmondXP/gtk-3.0/assets/$file"
         xpm_file="custom-themes/$ThemeName/gtk-3.0/assets/$file"
+
+        if [[ -f "$RedmondXPxpm" ]]; then
+            cp $RedmondXPxpm $xpm_file
+
+        fi
+
         if [[ -f "$xpm_file" ]]; then
             tmp="${xpm_file%.xpm}.png"
             magick "$xpm_file" "$tmp"
-            magick "$tmp" -colorspace Gray -contrast-stretch 2%x2% "$tmp"
+            magick "$tmp" -set option:modulate:colorspace hsl -modulate 100,0,100 "$tmp"
             magick "$tmp" "$xpm_file"
             rm -f "$tmp"
             
@@ -572,10 +579,17 @@ echo -e "${BLUE}Starting xfwm4${NC}"
     if [[ ${darkprimary} == y ]]; then
         for file in "${grayscale_files[@]}"; do
             xpm_file="custom-themes/$ThemeName/xfwm4/$file"
+            RedmondXPxpm="RedmondXP/xfwm4/$file"
+            
+            if [[ -f "$RedmondXPxpm" ]]; then
+            cp $RedmondXPxpm $xpm_file
+
+            fi
+
             if [[ -f "$xpm_file" ]]; then
                 tmp="${xpm_file%.xpm}.png"
                 magick "$xpm_file" "$tmp"
-                magick "$tmp" -colorspace Gray -contrast-stretch 2%x2% "$tmp"
+                magick "$tmp" -set option:modulate:colorspace hsl -modulate 100,0,100 "$tmp"
                 magick "$tmp" "$xpm_file"
                 rm -f "$tmp"
             fi

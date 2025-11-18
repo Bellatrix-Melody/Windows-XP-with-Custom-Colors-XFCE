@@ -250,7 +250,7 @@ magick "$tmp" -set option:modulate:colorspace hsl -modulate 100,0,100 "$tmp"
  
 I also added an option to make the minimize and maximize buttons greyscale becasue I found they would get lost in darker color schemes. I'm just taking the base RedmondXP images and completely desaturating them, a simple grayscale conversion produced worse results
 
-##Editing the CSS
+## Editing the CSS
 
 So RedmondXP uses several CSS documents to assign the color of various elements and pulls them all into a primary CSS file called gtk.css in the gtk-3.0. I just set custom varriables to be called in the other documents, which you can see in gtk.css under the "custom colors" comment. The only files I touched are found in recolor-target/gtk-3.0/ so it should be easy to use something like  `grep -l varriablename *.css`  to see what I changed. The rest of the CSS files are unchanged. 
 

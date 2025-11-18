@@ -15,14 +15,18 @@ Image Magick does not take raw HSL colors for it's '-modulate' option so finding
 
 I first created a color swatch that I created by using the following command: 
 
-```magick taskbar.png -scale 1x1! -format "%[hex:u.p]\n" info:```   
+```
+magick taskbar.png -scale 1x1! -format "%[hex:u.p]\n" info:
+```   
 
 This outputs the average color of taskbar.png (this is also reffered to as the pannel in XFCE) as a hex color. 
 
 Example: 
 
-```recolor-target/gtk-3.0/assets$ magick taskbar.png -scale 1x1! -format "%[hex:u.p]\n" info:
-265FD9FF```
+```
+recolor-target/gtk-3.0/assets$ magick taskbar.png -scale 1x1! -format "%[hex:u.p]\n" info:
+265FD9FF
+```
    
 
 I then used GIMP to create a small image with just that averaged color (called msblue.png in the colortest/ folder).
@@ -39,11 +43,14 @@ The brute force method is rather simple, we're going to '-modulate' our swatch, 
 
 Note: Image Magick takes HSL values in the following way 
 
-```-modulate L,S,H ```
+```
+-modulate L,S,H
+```
 
 The code for this section looks like this: 
 
-```testS=0
+```
+testS=0
 magickS=0
 
 until [[ $magickS -eq $targetS ]]
@@ -55,27 +62,34 @@ do
       
 done
 
-convertedS=$testS   ```
+convertedS=$testS
+```
 
 So to start we are setting two varriables testS and magickS to be equal to 0.
 
 Then we have a loop saying until magickS is equal to targetS (the saturation level of our target custom color) do the following 4 commands:
 
 Command 1:
-  ` magick colortest/msblue.png -set option:modulate:colorspace hsl -modulate 100,$testS,$convertedH colortest/msnotblue.png   `
+  ```
+magick colortest/msblue.png -set option:modulate:colorspace hsl -modulate 100,$testS,$convertedH colortest/msnotblue.png  
+  ```
 
 So here  set the lightness of our test swatch (msblue.png) to 100 (which in image magick means no change), set our saturation to the current value of targetS (0 to start), the hue value to our target hue value that we found above, and finally save it as msnotblue.png. 
 
 Command 2:
 
-  ` msnotblue=$(magick colortest/msnotblue.png -scale 1x1! -format "%[hex:u.p]\n" info:)   `
+  ```
+msnotblue=$(magick colortest/msnotblue.png -scale 1x1! -format "%[hex:u.p]\n" info:)
+```
 
 Here we are saying that the varriable "msnotblue" is equal to the same command we ran earlier to find the average color of an image in hex format but on the image we just created i.e. msnotblue.png. 
 
 Since we are testing the HSL value and not a hex value we need to convert the output of that command to an HSL format which is why we store it in a varriable, so that we can do with this:
 
 Command 3:
-  ` read magickH magickS magickL < <(converter_tester)  ` 
+  ```
+read magickH magickS magickL < <(converter_tester)
+``` 
 
 This just sets the varriables magickH magickS and magickL to the output of the function much earlier in the script that converts hex colors to HSL values(see credits). The function converter-tester just tests the varriable msnotblue. 
 
@@ -83,7 +97,9 @@ Finally we have:
 
 Command 4:
 
-`((testS++))`  
+```
+((testS++))
+```  
 
 This just increments the value of testS by 1 (so it testS is equal to 0 it adds one to it making it 1) until the condition of the loop is met i.e. the saturation level of msnotblue.png is the value of our custom color. 
 
@@ -99,20 +115,23 @@ Now that we have our target colors we just run our corrected magick command on a
 There are a couple notable extra things here, I use these commands to reprocess sidebar-backdrop.png (this is your sidebar in things like your file manager). I found that it was getting blown out in lighter color schemes, so I also run a bruteforce conversion on it earlier in the script:
 
 Line 489:
-   `cp RedmondXP/gtk-3.0/assets/sidebar-backdrop.png custom-themes/
+```
+cp RedmondXP/gtk-3.0/assets/sidebar-backdrop.png custom-themes/
 $ThemeName/gtk-3.0/assets/sidebar-backdrop.png
-magick custom-themes/$ThemeName/gtk-3.0/assets/sidebar-backdrop.png -set option:modulate:colorspace hsl -modulate $convertedLb,$convertedSb,$convertedH2 custom-themes/$ThemeName/gtk-3.0/assets/sidebar-backdrop.png   
-`
+magick custom-themes/$ThemeName/gtk-3.0/assets/sidebar-backdrop.png -set option:modulate:colorspace hsl -modulate $convertedLb,$convertedSb,$convertedH2 custom-themes/$ThemeName/gtk-3.0/assets/sidebar-backdrop.png  
+```
 I also take tray.png (the far right side of your pannel in XFCE) and lower the lightness value of it by ten. I found it was too samey and the slight adjustment after the color conversion makes it feel more seperated. 
 
 Line 492:
-   ` magick custom-themes/$ThemeName/gtk-3.0/assets/tray.png -set option:modulate:colorspace hsl -modulate 90,100,100 custom-themes/$ThemeName/gtk-3.0/assets/tray.png`
+   ```
+magick custom-themes/$ThemeName/gtk-3.0/assets/tray.png -set option:modulate:colorspace hsl -modulate 90,100,100 custom-themes/$ThemeName/gtk-3.0/assets/tray.png
+```
  
 I also added an option to make the minimize and maximize buttons greyscale becasue I found they would get lost in darker color schemes. 
 
 ##Editing the CSS
 
-So RedmondXP uses several CSS documents to assign the color of various elements and pulls them all into a primary CSS file called gtk.css in the gtk-3.0. I just set custom varriables to be called in the other documents, which you can see in gtk.css under the "custom colors" comment. The only files I touched are found in recolor-target/gtk-3.0/ so it should be easy to use something like  grep -l varriablename *.css  to see what I changed. The rest of the CSS files are unchanged. 
+So RedmondXP uses several CSS documents to assign the color of various elements and pulls them all into a primary CSS file called gtk.css in the gtk-3.0. I just set custom varriables to be called in the other documents, which you can see in gtk.css under the "custom colors" comment. The only files I touched are found in recolor-target/gtk-3.0/ so it should be easy to use something like  `grep -l varriablename *.css`  to see what I changed. The rest of the CSS files are unchanged. 
 
 I also edit the file themerc in xfce/ since it determines the color of test in your title bar. 
 

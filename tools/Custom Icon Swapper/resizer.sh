@@ -81,19 +81,7 @@ cp $f $Themename/128x128/places/gnome-fs-server.png
 
 done
 sed -i "s/^Name=Windows XP$/Name=$Themename/" $Themename/index.theme
-cp -r $Themename ~/.icons
+cp -r $Themename ~/.icons/$ThemeName
 
 echo ".done"
-
-
-#cp -r --update=none Windows-XP/* $ThemeName 
-
-
-#gtk-network.png
-#gnome-mime-x-directory-smb-workgroup.png
-#128x128/places/gnome-remote-desktop.png
-
-#128x128/devices/gnome-fs-client.png
-#48x48/places/user-trash-full.png
-#48x48/places/emptytrash.png
 

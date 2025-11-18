@@ -195,7 +195,7 @@ swatchhex=$(magick /colortest/$swatch -scale 1x1! -format "%[hex:u.p]\n" info:)
 read sourceH sourceS sourceL < <(converterswatch)
 
 
-echo "enter the hex code for your base color i.e. the color you want your image to become with no starting # i.e. 99D2D3"
+echo "enter the hex code for your new color i.e. the color you want your image to become with no starting # i.e. 99D2D3"
 read hex
 
 read targetH targetS targetL < <(converter)

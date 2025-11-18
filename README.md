@@ -94,13 +94,14 @@ There are a couple notable extra things here, I use these commands to reprocess 
 
 Line 489:
 'cp RedmondXP/gtk-3.0/assets/sidebar-backdrop.png custom-themes/$ThemeName/gtk-3.0/assets/sidebar-backdrop.png
-       magick custom-themes/$ThemeName/gtk-3.0/assets/sidebar-backdrop.png -set option:modulate:colorspace hsl -modulate $convertedLb,$convertedSb,$convertedH2 custom-themes/$ThemeName/gtk-3.0/assets/sidebar-backdrop.png'
+
+magick custom-themes/$ThemeName/gtk-3.0/assets/sidebar-backdrop.png -set option:modulate:colorspace hsl -modulate $convertedLb,$convertedSb,$convertedH2 custom-themes/$ThemeName/gtk-3.0/assets/sidebar-backdrop.png'
 
 I also take tray.png (the far right side of your pannel in XFCE) and lower the lightness value of it by ten. I found it was too samey and the slight adjustment after the color conversion makes it feel more seperated. 
 
 Line 492:
-" magick custom-themes/$ThemeName/gtk-3.0/assets/tray.png -set option:modulate:colorspace hsl -modulate 90,100,100 custom-themes/$ThemeName/gtk-3.0/assets/tray.png
-"
+ 'magick custom-themes/$ThemeName/gtk-3.0/assets/tray.png -set option:modulate:colorspace hsl -modulate 90,100,100 custom-themes/$ThemeName/gtk-3.0/assets/tray.png'
+ 
 I also added an option to make the minimize and maximize buttons greyscale becasue I found they would get lost in darker color schemes. 
 
 ##Editing the CSS

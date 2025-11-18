@@ -60,7 +60,7 @@ I think saying yes is the safest bet here, because, depending on the color, they
 
 **Known Bugs**
 
-On my install of Linux Mint the text on the clock widget in the XFCE pannel doesn't update, but it does on a fresh install VM. If you run into this you can change it manually by going to the clock settings and making a custom format using the follow code:
+When using a custom font on the clock in the XFCE pannel the text color does not change.  If you run into this you can change it manually by going to the clock settings and making a custom format using the follow code:
 
 <img width="433" height="167" alt="image" src="https://github.com/user-attachments/assets/6d9c04f3-5b15-4e42-b50d-8f9904fceb53" />
 
@@ -87,12 +87,12 @@ changeme
 
 A light bakground with color converted minimize and maximize buttons
 
-<img width="2530" height="1308" alt="Screenshot_2025-11-18_12-25-38" src="https://github.com/user-attachments/assets/8d4d06c7-d8a3-4849-a066-b9d70d67a0d0" />
+<img width="2530" height="1308" alt="image" src="https://github.com/user-attachments/assets/009aae25-ff54-41f6-8e9f-3f60556f0036" />
+
 
 A dark background with greyscale minimize and maximize buttons
 
-<img width="2530" height="1308" alt="image" src="https://github.com/user-attachments/assets/81534a07-832a-45ec-a671-48909a54b71d" />
-
+<img width="2530" height="1308" alt="image" src="https://github.com/user-attachments/assets/10b6bc53-1531-4d4c-ba15-f9faeefd3cd9" />
 
 # **How it works**
 

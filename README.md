@@ -51,6 +51,7 @@ Run the script:
 The script will guide you through the rest of the process. The setup question at the start just creates a virtual enviorment `venv` for the python script to run out of.
 
 **What this script cannot do**
+
 Change the text on the clock widget in the XFCE pannel. However you can do this manually by going to the clock settings and making a custom format using the follow code:
 
 <img width="433" height="167" alt="image" src="https://github.com/user-attachments/assets/6d9c04f3-5b15-4e42-b50d-8f9904fceb53" />

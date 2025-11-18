@@ -527,9 +527,7 @@ echo "
 ########################################################################################
 "
 
-echo -e "${GREEN}Would you like your minimize and maximize buttons to be greyscaled or colored?
-
-THIS IS HIGHLY RECOMMENDED FOR DARK PRIMARY COLORS?${NC}"
+echo -e "${GREEN}Are you using a dark primary color?${NC}"
 echo -e "${BLUE} Enter answer: (y/n)"
 read darkprimary
 

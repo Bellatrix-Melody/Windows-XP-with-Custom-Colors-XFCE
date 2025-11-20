@@ -279,7 +279,7 @@ echo -e "${GREEN} This script has a built in python script to create a custom co
 
 However, this is opetional so you have three options for how you want to customize your colors${NC}
 
-${GREEN}Option 1: Create a palette of 8 colors using your background image. Then you can chose a primary and secondary color from among them.${NC}
+${GREEN}Option 1: Create a palette of 16 colors using your background image. Then you can chose a primary and secondary color from among them.${NC}
 
 ${BLUE}OR${NC}
 

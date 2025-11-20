@@ -113,16 +113,17 @@ trash.png
 
 # **Examples**
 
-A light bakground with color converted minimize and maximize buttons 
+**A light primary color with color converted minimize and maximize buttons**
 
 <img width="2530" height="1308" alt="image" src="https://github.com/user-attachments/assets/009aae25-ff54-41f6-8e9f-3f60556f0036" />
 
 
-A dark background with greyscale minimize and maximize buttons
+**A vibrant primary color with greyscale minimize and maximize buttons and a secondary color system tray**
 
-<img width="2530" height="1308" alt="image" src="https://github.com/user-attachments/assets/10b6bc53-1531-4d4c-ba15-f9faeefd3cd9" />
+<img width="2530" height="1341" alt="image" src="https://github.com/user-attachments/assets/70968bf9-d083-4f2e-9d2c-89050fd47ebf" />
 
-A dark background with a secondary color system tray
+
+**A dark primary color with greyscale minimize and maximize buttons and a secondary color system tray**
 
 <img width="2530" height="1309" alt="image" src="https://github.com/user-attachments/assets/4814c787-116d-4f15-b72a-7646f3878a09" />
 

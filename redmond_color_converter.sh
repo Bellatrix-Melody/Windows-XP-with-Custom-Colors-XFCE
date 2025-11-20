@@ -320,7 +320,7 @@ ${RED}Note: the name is case sensitive${NC}"
     echo " 
 
 ########################################################################################
-
+"
 echo -e "${GREEN}Choose the two colors you like the most from the above listing of colors${NC}"
 echo ""
 echo -e "${BLUE}Enter a value (1-16) for your primary color:${NC}"

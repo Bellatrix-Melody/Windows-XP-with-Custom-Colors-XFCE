@@ -1,10 +1,10 @@
 #!/bin/bash
 
-GREEN='\e[1;36;0;32m'
+GREEN='\e[0;92m'
 NC='\033[0m'
-PURPLE='\033[0;35m'
-BLUE='\e[1;36;0;34m'
-RED='\033[0;31m'
+BLUE='\e[0;94m'
+RED='\033[0;91m'
+
 # This array is a hue wheel based off msblue.png instead of red and converted to a 0-200 scale so that it can be input into image magick credit. The formula to do this was pulled from https://github.com/r0d3r1ck0rd0n3z/ImageMagick-Modulate-Calculator/blob/master/script.js I just made it into an array, so thanks r0d3r1ck0rd0n3z!
 #How I found the base HSL of msblue.png was using the following command on the base RedmondXP taskbar.png (in gtk-3.0/assets)"magick taskbar.png -scale 1x1! -format "%[hex:u.p]\n" info:" this gave me a hex code, so I ran it through the converter below to get the base HSL value
 #If you want to start from a different base HSL value you can use Magick_Hex_to_HSL.sh comment out the line below, the line "convertedH=${H_array[$targetH]}" further down and uncomment the line below that. It won't build you a new array but it's something'

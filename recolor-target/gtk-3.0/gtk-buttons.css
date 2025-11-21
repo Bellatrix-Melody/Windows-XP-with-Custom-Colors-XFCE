@@ -67,14 +67,18 @@ button.flat, toolbar button:not(.linked):not(.raised), .primary-toolbar button:n
    margin: 1px;
    border: 1px solid;
    border-color: transparent;
-   color: @theme_fg_color;
+   color: @custom_text_color;
    box-shadow: none;
    background-color: transparent; }
+
+toolbar button:not(.linked):not(.raised), .primary-toolbar button:not(.linked):not(.raised) {
+color: @theme_fg_color;
+}
 
 button.flat:not(:checked):not(:active):hover,
 toolbar button:not(:checked):not(:active):not(.linked):not(.raised):hover,
 .primary-toolbar button:not(:checked):not(:active):not(.linked):not(.raised):hover {
-   color: @button_fg_color;
+   color: @custom_text_color;
    border: 1px solid @dark_shadow;
    box-shadow: 0px -1px 2px @dark_shadow inset, 1px 2px 2px -1px shade(@bg_color,1.1) inset; 
    background-color: transparent; }
@@ -82,7 +86,7 @@ toolbar button:not(:checked):not(:active):not(.linked):not(.raised):hover,
 button.flat:active, button.flat:checked, .primary-toolbar button:not(.linked):not(.raised):active,
 .primary-toolbar button:not(.linked):not(.raised):checked, toolbar button:not(.linked):not(.raised):checked,
  toolbar button:not(.linked):not(.raised):active {
-   color: @secondary_text_color;
+   color: @fg_color;
    box-shadow: unset;
    box-shadow: 1px 1px 2px @dark_shadow inset;
    border: 1px solid shade(@medium_shadow, 0.7);

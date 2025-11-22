@@ -186,6 +186,7 @@ XfdesktopIconView:active {
 .xfce4-panel #actions-button label {
   padding-left: 4px;
   padding-right: 4px;
+    color: @tray_text_color;
 }
 
 
@@ -193,12 +194,18 @@ XfdesktopIconView:active {
    border: 1px solid #ff0000;
 }
 
+
+.xfce4-panel #sn-button, 
+.xfce4-panel #sn-button-box {
+    color: @tray_text_color;
+}
+
 .xfce4-panel #clock-button,
 .xfce4-panel #clock-button:hover,
 .xfce4-panel #clock-button:checked {
    box-shadow: none;
    border: 0px solid;
-   color: @custom_text_color;
+   color: @tray_text_color;
    background-size: 100% 100%;
    background-size: 100% 100%;
    margin-top: 0px;

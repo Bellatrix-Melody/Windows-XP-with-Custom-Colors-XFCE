@@ -10,6 +10,7 @@
 @define-color custom_searchbar_color @custom_secondary;
 @define-color menubg_avg #MNUBGA;
 @define-color menubg_avg25 #25MNUB25;
+@define-color tray_text_color #TRAYCLR;
 
 /*When you roll over an item in a list, what color do you want it to be? Recommendation, go for a darker shade of your base color, or leave it classic blue*/
 @define-color selected_bg_color #highlightchoice;

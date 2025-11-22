@@ -798,6 +798,7 @@ The theme has been moved to ~./themes/ so feel free to apply the theme, and cons
 
 Note: after choices have been made and the script finishes executing you may need to reload your theme${NC}"
 
+    
 echo " 
 ########################################################################################
 "
@@ -812,7 +813,25 @@ read textcolor
 echo " 
 ########################################################################################
 "
+
+if [[ $traychoice == y ]]; then
+echo ""
+echo -e "${GREEN}You have decided to use your secondary color for your system tray (where your clock goes). 
+
+Given your secondary of #$secondary, what color would you like most icons and text to use in the system tray? 
+
+(Recommended: black [000000] or white [FFFFFF] but you can test other options at https://webaim.org/resources/contrastchecker/ )${NC}"
+
+echo -e "${BLUE}Enter a hex color minus the starting #. Example: 000000${NC}"
+read traytextcolor
+
+elif [[ $traychoice == n ]]; then
+traytextcolor=$textcolor
+
+fi
+
 sed -i 's|@define-color custom_text_color #TXTCLR;|@define-color custom_text_color #'"$textcolor"';|g' "custom-themes/$ThemeName/gtk-3.0/gtk.css"
+sed -i 's|@define-color tray_text_color #TRAYCLR|@define-color tray_text_color #'"$traytextcolor"'|g' "custom-themes/$ThemeName/gtk-3.0/gtk.css"
 
 sed -i "s|TXTCLR|$textcolor|g" "custom-themes/$ThemeName/xfwm4/themerc"
 

@@ -39,7 +39,7 @@ do
     magick $f -resize 48x48 $Themename/48x48/places/user-trash-full.png
     magick $f -resize 24x24 $Themename/24x24/places/user-trash.png
     magick $f -resize 22x22 $Themename/22x22/places/user-trash.png
-    magick $f -resize 16x16 $Themename//16x16/status/user-trash-full.png
+    magick $f -resize 16x16 $Themename/16x16/status/user-trash-full.png
     magick $f -resize 16x16 $Themename/16x16/places/emptytrash.png
 done
 

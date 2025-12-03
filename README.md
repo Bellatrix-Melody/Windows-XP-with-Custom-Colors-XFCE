@@ -11,7 +11,8 @@ This is a script that was built out of a desire to use the RedmondXP theme, but 
 Open a terminal in your desired install directory and clone the repo via: 
 
 ```
-git clone https://github.com/Bellatrix-Melody/RedmondXP-Color-Customizer-for-XFCE.git
+git clone https://github.com/Bellatrix-Melody/Windows-XP-with-Custom-Colors-XFCE.git
+
 ```
 Open a terminal in the repo folder (RedmondXP-Color-Customizer-for-XFCE-main/) and give the script executable permissions
 

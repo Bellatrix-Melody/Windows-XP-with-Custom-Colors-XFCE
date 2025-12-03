@@ -124,7 +124,7 @@ XfdesktopIconView .view:active {
    color: @custom_text_color; }
 
 XfdesktopIconView:active {
-   color: @selected_text_color;
+   color: @selected_bg_color;
    background-color: @selected_bg_color; }
 
 /*System tray box */

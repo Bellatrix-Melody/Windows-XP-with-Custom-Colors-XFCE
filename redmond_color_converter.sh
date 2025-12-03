@@ -783,7 +783,6 @@ menubgavg=$(magick custom-themes/$ThemeName/gtk-3.0/assets/menubg.png -scale 1x1
 sed -i "s/PRIMRY/$primary/g" custom-themes/$ThemeName/gtk-3.0/gtk.css
 sed -i "s/SECNDR/$secondary/g" custom-themes/$ThemeName/gtk-3.0/gtk.css
 sed -i "s/MNUBGA/$menubgavg/g" custom-themes/$ThemeName/gtk-3.0/gtk.css
-sed -i "s/25MNUB/$menubgavg/g" custom-themes/$ThemeName/gtk-3.0/gtk.css
 
 
 cp -r custom-themes/$ThemeName ~/.themes/

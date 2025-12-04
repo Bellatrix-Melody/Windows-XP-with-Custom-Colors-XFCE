@@ -24,7 +24,7 @@ echo "Making document icons"
 
 for f in custom-icons/documents.png
 do
-cp $f $Themename/128x128/places/
+    cp $f $Themename/128x128/places/
     magick $f -resize 48x48 $Themename/48x48/places/user-documents.png
     magick $f -resize 24x24 $Themename/24x24/places/user-documents.png
     magick $f -resize 22x22 $Themename/22x22/places/user-documents.png
@@ -35,8 +35,9 @@ echo "Making trash icons"
 
 for f in custom-icons/trash.png
 do
+    cp $f $Themename/128x128/places/user-trash.png
     magick $f -resize 48x48 $Themename/48x48/places/user-trash-full.png
-    magick $f -resize 48x48 $Themename/48x48/places/user-trash-full.png
+    magick $f -resize 48x48 $Themename/48x48/places/emptytrash.png
     magick $f -resize 24x24 $Themename/24x24/places/user-trash.png
     magick $f -resize 22x22 $Themename/22x22/places/user-trash.png
     magick $f -resize 16x16 $Themename/16x16/status/user-trash-full.png
@@ -84,4 +85,3 @@ sed -i "s/^Name=Windows XP$/Name=$Themename/" $Themename/index.theme
 cp -r $Themename ~/.icons/$ThemeName
 
 echo ".done"
-

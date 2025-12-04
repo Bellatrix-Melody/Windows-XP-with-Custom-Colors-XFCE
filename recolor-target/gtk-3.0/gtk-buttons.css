@@ -86,7 +86,7 @@ toolbar button:not(:checked):not(:active):not(.linked):not(.raised):hover,
 button.flat:active, button.flat:checked, .primary-toolbar button:not(.linked):not(.raised):active,
 .primary-toolbar button:not(.linked):not(.raised):checked, toolbar button:not(.linked):not(.raised):checked,
  toolbar button:not(.linked):not(.raised):active {
-   color: @fg_color;
+   color: @selected_text_color;
    box-shadow: unset;
    box-shadow: 1px 1px 2px @dark_shadow inset;
    border: 1px solid shade(@medium_shadow, 0.7);

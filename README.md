@@ -4,6 +4,9 @@
 
 This is a script that was built out of a desire to use the RedmondXP theme, but replacing the Windows XP blue with custom colors based off my background image instead. I had done this by hand a couple[...]
 
+*Note* : This readme has been turned into a much cleaner and better written website, check it out! 
+
+[Readme Web Version](https://bellatrix-melody.github.io/Windows-XP-with-Custom-Colors-XFCE-Website/)
 # **Setup**
 
 ### **Installation**

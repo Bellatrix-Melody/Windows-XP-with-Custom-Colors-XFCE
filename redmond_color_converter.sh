@@ -5,9 +5,9 @@ NC='\033[0m'
 BLUE='\e[0;94m'
 RED='\033[0;91m'
 
-# This array is a hue wheel based off msblue.png instead of red and converted to a 0-200 scale so that it can be input into image magick credit. The formula to do this was pulled from https://github.com/r0d3r1ck0rd0n3z/ImageMagick-Modulate-Calculator/blob/master/script.js I just made it into an array, so thanks r0d3r1ck0rd0n3z!
-#How I found the base HSL of msblue.png was using the following command on the base RedmondXP taskbar.png (in gtk-3.0/assets)"magick taskbar.png -scale 1x1! -format "%[hex:u.p]\n" info:" this gave me a hex code, so I ran it through the converter below to get the base HSL value
-#If you want to start from a different base HSL value you can use Magick_Hex_to_HSL.sh comment out the line below, the line "convertedH=${H_array[$targetH]}" further down and uncomment the line below that. It won't build you a new array but it's something'
+# This array is a hue wheel based off msblue.png instead of red and converted to a 0-200 scale so that it can be input into imagemagick credit. The formula to do this was pulled from https://github.c[...]
+#How I found the base HSL of msblue.png was using the following command on the base RedmondXP taskbar.png (in gtk-3.0/assets)"magick taskbar.png -scale 1x1! -format "%[hex:u.p]\n" info:" this gave me [...]
+#If you want to start from a different base HSL value you can use Magick_Hex_to_HSL.sh comment out the line below, the line "convertedH=${H_array[$targetH]}" further down and uncomment the line below [...]
 
 #custom_start_hue=[insert your custom hue value here]
 H_array=(
@@ -32,15 +32,15 @@ H_array=(
   175 176 176 177
 )
 
-H_arrayR=(226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319 320 321 322 323 324 325 326 327 328 329 330 331 332 333 334 335 336 337 338 339 340 341 342 343 344 345 346 347 348 349 350 351 352 353 354 355 356 357 358 359 360 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46)
+H_arrayR=(226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 27[...]
 
-H_arrayL=(46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226)
+H_arrayL=(46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 [...]
 
-H_arrayR2=(202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319 320 321 322 323 324 325 326 327 328 329 330 331 332 333 334 335 336 337 338 339 340 341 342 343 344 345 346 347 348 349 350 351 352 353 354 355 356 357 358 359 360 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
+H_arrayR2=(202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 2[...]
 )
 
-H_arrayL2=(22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202)
-#This converter function was taken from https://codeberg.org/z3rOR0ne/dyetide/src/branch/main/dyetide and edited to only convert and output the necessary HSL color needed for the rest of the script, so thanks z3rOR0ne!
+H_arrayL2=(22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 [...]
+#This converter function was taken from https://codeberg.org/z3rOR0ne/dyetide/src/branch/main/dyetide and edited to only convert and output the necessary HSL color needed for the rest of the script, s[...]
 
 #converter helpers
 
@@ -89,7 +89,7 @@ calculate_saturation() {
 calculate_hue() {
     local min=$1
     local max=$2
-    # if rgb all have same values, then color is grey and lightness is 0
+    # if rgb all have same values, then color is grey and hue is 0
     if [[ $(echo "$max == $min" | bc -l) -eq 1 ]]; then
         printf "%.0f" 0
     else
@@ -268,7 +268,7 @@ echo "
 "
 
 echo -e "${BLUE}Enter your theme name${NC} 
-${RED}note: theme names can only contain alpha-numeric characters and must not contain a space ${NC}"
+${RED}note: theme names can only contain alphanumeric characters and must not contain a space ${NC}"
 read ThemeName
 echo " 
 ########################################################################################
@@ -277,9 +277,9 @@ echo "
 #letting the user choose automation or not
 echo -e "${GREEN} This script has a built in python script to create a custom color palette based off of the background image you want to use. 
 
-However, this is opetional so you have three options for how you want to customize your colors${NC}
+However, this is optional so you have three options for how you want to customize your colors${NC}
 
-${GREEN}Option 1: Create a palette of 16 colors using your background image. Then you can chose a primary and secondary color from among them.${NC}
+${GREEN}Option 1: Create a palette of 16 colors using your background image. Then you can choose a primary and secondary color from among them.${NC}
 
 ${BLUE}OR${NC}
 
@@ -303,7 +303,7 @@ if [[ ${automation_choice} -eq 1 ]]; then
 ${RED}Note: the name is case sensitive${NC}"
     read background  
     echo ""    
-    echo -e "${BLUE}Creating a color palliate based off your background image${NC}"
+    echo -e "${BLUE}Creating a color palette based off your background image${NC}"
     echo ""
 
     source backgrounds/color_extractor/bin/activate
@@ -401,7 +401,7 @@ read secondarychoice
   fi
 
   echo ""
-  echo -e "${GREEN}Would you like your tray(i.e where your clock typically goes) to be based off your secondary color? (asking to save on possible conversion time later)${NC}"
+  echo -e "${GREEN}Would you like your tray (i.e. where your clock typically goes) to be based off your secondary color? (asking to save on possible conversion time later)${NC}"
   echo -e "${BLUE}Enter your choice (y/n)${NC}"
   read traychoice
 elif [[ ${automation_choice} -eq 2 ]]; then
@@ -413,7 +413,7 @@ ${RED}Note: the name is case sensitive${NC}"
     read background
     echo ""    
     echo ""
-    echo -e "${GREEN}Creating a color palliate based off your background image${NC}"
+    echo -e "${GREEN}Creating a color palette based off your background image${NC}"
     echo ""
     echo "" 
 
@@ -442,10 +442,10 @@ elif [[ ${automation_choice} -eq 3 ]]; then
     echo " 
 ########################################################################################
 "    
-    echo -e "${BLUE}Enter your desired seconday color as a hex code, minus the pound sign. Example: 99E2E3${NC} "
+    echo -e "${BLUE}Enter your desired secondary color as a hex code, minus the pound sign. Example: 99E2E3${NC} "
     read secondary
     echo ""
-    echo -e "${GREEN}Would you like your tray(i.e where your clock typically goes) to be based off your secondary color? (asking to save on possible conversion time later)${NC}"
+    echo -e "${GREEN}Would you like your tray (i.e. where your clock typically goes) to be based off your secondary color? (asking to save on possible conversion time later)${NC}"
     echo "Enter your choice (y/n)"
     read traychoice
 fi
@@ -632,7 +632,7 @@ magickS=0
 
 
 
-#shifting the images to the desire color
+#shifting the images to the desired color
 
 echo -e "${GREEN}Converting images to desired primary color${NC}"
 
@@ -652,13 +652,13 @@ for f in custom-themes/$ThemeName/gtk-2.0/assets/*.png
         done
 
     cp RedmondXP/gtk-3.0/assets/sidebar-backdrop.png custom-themes/$ThemeName/gtk-3.0/assets/sidebar-backdrop.png
-       magick custom-themes/$ThemeName/gtk-3.0/assets/sidebar-backdrop.png -set option:modulate:colorspace hsl -modulate $convertedLb,$convertedSb,$convertedHb custom-themes/$ThemeName/gtk-3.0/assets/sidebar-backdrop.png
+       magick custom-themes/$ThemeName/gtk-3.0/assets/sidebar-backdrop.png -set option:modulate:colorspace hsl -modulate $convertedLb,$convertedSb,$convertedHb custom-themes/$ThemeName/gtk-3.0/assets/[...]
    
     if [[ $traychoice == y ]]; then            
      cp RedmondXP/gtk-3.0/assets/tray.png custom-themes/$ThemeName/gtk-3.0/assets/tray.png
      cp RedmondXP/gtk-3.0/assets/tray_border.png custom-themes/$ThemeName/gtk-3.0/assets/tray_border.png
      magick custom-themes/$ThemeName/gtk-3.0/assets/tray.png -set option:modulate:colorspace hsl -modulate $convertedL2,$convertedS2,$convertedH2 custom-themes/$ThemeName/gtk-3.0/assets/tray.png
-     magick custom-themes/$ThemeName/gtk-3.0/assets/tray_border.png -set option:modulate:colorspace hsl -modulate $convertedL2,$convertedS2,$convertedH2 custom-themes/$ThemeName/gtk-3.0/assets/tray_border.png   
+     magick custom-themes/$ThemeName/gtk-3.0/assets/tray_border.png -set option:modulate:colorspace hsl -modulate $convertedL2,$convertedS2,$convertedH2 custom-themes/$ThemeName/gtk-3.0/assets/tray_bo[...]
                 
     elif [[ $traychoice == n ]]; then
     magick custom-themes/$ThemeName/gtk-3.0/assets/tray.png -set option:modulate:colorspace hsl -modulate 90,100,100 custom-themes/$ThemeName/gtk-3.0/assets/tray.png
@@ -751,13 +751,13 @@ echo -e "${BLUE}Fixing menu buttons${NC}"
 
 
 #merge menu buttons together
-    magick custom-themes/$ThemeName/menu_buttons/background/start_active_a.png custom-themes/$ThemeName/menu_buttons/button/start_active_b.png -layers flatten custom-themes/$ThemeName/menu_buttons/start_active.png
+    magick custom-themes/$ThemeName/menu_buttons/background/start_active_a.png custom-themes/$ThemeName/menu_buttons/button/start_active_b.png -layers flatten custom-themes/$ThemeName/menu_buttons/sta[...]
     magick custom-themes/$ThemeName/menu_buttons/background/start1-a.png custom-themes/$ThemeName/menu_buttons/button/start1-b.png -layers flatten custom-themes/$ThemeName/menu_buttons/start1.png
     magick custom-themes/$ThemeName/menu_buttons/background/start-a.png custom-themes/$ThemeName/menu_buttons/button/start-b.png -layers flatten custom-themes/$ThemeName/menu_buttons/start.png 
-    magick custom-themes/$ThemeName/menu_buttons/background/start_active1_a.png custom-themes/$ThemeName/menu_buttons/button/start_active1_b.png -layers flatten custom-themes/$ThemeName/menu_buttons/start_active1.png
-    magick custom-themes/$ThemeName/menu_buttons/background/start_hover1_a.png custom-themes/$ThemeName/menu_buttons/button/start_hover1_b.png -layers flatten custom-themes/$ThemeName/menu_buttons/start_hover1.png
-    magick custom-themes/$ThemeName/menu_buttons/background/start_hover_a.png custom-themes/$ThemeName/menu_buttons/button/start_hover_b.png -layers flatten custom-themes/$ThemeName/menu_buttons/start_hover.png
-    magick custom-themes/$ThemeName/menu_buttons/background/menu-box-a.png custom-themes/$ThemeName/menu_buttons/button/menu-box-b.png -layers flatten custom-themes/$ThemeName/menu_buttons/menu-box.png
+    magick custom-themes/$ThemeName/menu_buttons/background/start_active1_a.png custom-themes/$ThemeName/menu_buttons/button/start_active1_b.png -layers flatten custom-themes/$ThemeName/menu_buttons/s[...]
+    magick custom-themes/$ThemeName/menu_buttons/background/start_hover1_a.png custom-themes/$ThemeName/menu_buttons/button/start_hover1_b.png -layers flatten custom-themes/$ThemeName/menu_buttons/sta[...]
+    magick custom-themes/$ThemeName/menu_buttons/background/start_hover_a.png custom-themes/$ThemeName/menu_buttons/button/start_hover_b.png -layers flatten custom-themes/$ThemeName/menu_buttons/start[...]
+    magick custom-themes/$ThemeName/menu_buttons/background/menu-box-a.png custom-themes/$ThemeName/menu_buttons/button/menu-box-b.png -layers flatten custom-themes/$ThemeName/menu_buttons/menu-box.pn[...]
 
 
 
@@ -774,7 +774,7 @@ echo -e "${BLUE}Fixing menu buttons${NC}"
 
 echo -e "${BLUE}Image conversion complete${NC}"
 
-#css editior
+#css editor
 echo -e "${BLUE}Doing some initial CSS edits${NC}"
 
 
@@ -790,10 +790,10 @@ cp -r custom-themes/$ThemeName ~/.themes/
 echo " 
 ########################################################################################
 "
-echo -e "${GREEN} Now that our images are edited there there are a few colors that are in the CSS files that apply those images in your new custom theme. 
+echo -e "${GREEN} Now that our images are edited there are a few colors that are in the CSS files that apply those images in your new custom theme. 
 
 
-The theme has been moved to ~./themes/ so feel free to apply the theme, and consider your options while making these choices. When you do, you may notice some color inconsistencies, that is expected at this stage. 
+The theme has been moved to ~/.themes/ so feel free to apply the theme, and consider your options while making these choices. When you do, you may notice some color inconsistencies, that is expected a[...]
 
 Note: after choices have been made and the script finishes executing you may need to reload your theme${NC}"
 
@@ -842,9 +842,9 @@ echo -e "${GREEN}When you highlight text, or an icon in your file browser would 
 
 1. Make it a custom color (your secondary color)
 2. Make it a custom color (your primary color)
-3. Keep it the default windows light blue
+3. Keep it the default Windows light blue
 
-${GREEN}Please note that this also effects buttons when they are pressed in. i.e. file/edit/view in your text editor.
+${GREEN}Please note that this also affects buttons when they are pressed in. i.e. file/edit/view in your text editor.
 ${NC}"
 echo " 
 ########################################################################################
@@ -898,8 +898,7 @@ echo "
 ########################################################################################
 "
 
-echo -e "${Green}Your theme is ready and in your ~/.themes/ folder make sure to refresh your theme to see the final changes. If you want to change your primary or secondary color you can run the script again!${NC}"
+echo -e "${GREEN}Your theme is ready and in your ~/.themes/ folder. Make sure to refresh your theme to see the final changes. If you want to change your primary or secondary color you can run the script again.${NC}"
 
 echo ""
 echo "Goodbye"
-

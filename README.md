@@ -108,7 +108,7 @@ documents.png
 
 network.png
 
-**Your custom "Tash icon"**
+**Your custom "Trash icon"**
 
 trash.png
 
@@ -156,7 +156,7 @@ recolor-target/gtk-3.0/assets$ magick taskbar.png -scale 1x1! -format "%[hex:u.p
 
 I then used GIMP to create a small image with just that averaged color (called msblue.png in the colortest/ folder).
 
-I took this average and converted it to HSL colors and used this tool [here](https://r0d3r1ck0rd0n3z.github.io/ImageMagick-Modulate-Calculator/) with the H value of msblue.png. Using the math in the java script I was able to create a list of what custom H value in Image Magick will make the base color (from msblue.png) into the desired custom color. 
+I took this average and converted it to HSL colors and used this tool [here](https://r0d3r1ck0rd0n3z.github.io/ImageMagick-Modulate-Calculator/) with the H value of msblue.png. Using the math in the java script I was able to create a list of what custom H values in Image Magick will make the base color (from msblue.png) into the desired custom color. 
 
 ### **The brute force method**
 
@@ -199,7 +199,7 @@ Command 1:
 magick colortest/msblue.png -set option:modulate:colorspace hsl -modulate 100,$testS,$convertedH colortest/msnotblue.png  
   ```
 
-So here  set the lightness of our test swatch (msblue.png) to 100 (which in image magick means no change), set our saturation to the current value of targetS (0 to start), the hue value to our target hue value that we found above, and finally save it as msnotblue.png. 
+So here  set the lightness of our test swatch (msblue.png) to 100 (which in image magick means no change), set our saturation to the current value of testS (0 to start), the hue value to our target hue value that we found above, and finally save it as msnotblue.png. 
 
 Command 2:
 
@@ -216,7 +216,7 @@ Command 3:
 read magickH magickS magickL < <(converter_tester)
 ``` 
 
-This just sets the varriables magickH magickS and magickL to the output of the function much earlier in the script that converts hex colors to HSL values(see credits). The function converter-tester just tests the varriable msnotblue. 
+This just sets the varriables magickH magickS and magickL to the output of the function much earlier in the script that converts hex colors to HSL values(see credits). The function converter_tester just tests the varriable msnotblue. 
 
 Finally we have:
 
@@ -246,11 +246,11 @@ $ThemeName/gtk-3.0/assets/sidebar-backdrop.png
 magick custom-themes/$ThemeName/gtk-3.0/assets/sidebar-backdrop.png -set option:modulate:colorspace hsl -modulate $convertedLb,$convertedSb,$convertedH2 custom-themes/$ThemeName/gtk-3.0/assets/sidebar-backdrop.png  
 ```
 
-I also take tray.png (the far right side of your pannel in XFCE) and lower the lightness value of it by ten. I found it was too samey and the slight adjustment after the color conversion makes it feel more seperated. 
+I also take tray.png (the far right side of your pannel in XFCE) and lower the lightness value of it by ten. I found it was too samey and the slight adjustment after the color conversion makes it feel more seperated. Unless you are using your secondary color as your tray color, then it is run through another brute force conversion, but searching for your secondary color and edited like sidebar-backdrop.png.
 
 Line 492:
    ```
-magick "$tmp" -set option:modulate:colorspace hsl -modulate 100,0,100 "$tmp"
+   magick "$tmp" -set option:modulate:colorspace hsl -modulate 100,0,100 "$tmp"
 ```
  
 I also added an option to make the minimize and maximize buttons greyscale becasue I found they would get lost in darker color schemes. I'm just taking the base RedmondXP images and completely desaturating them, a simple grayscale conversion produced worse results
@@ -259,7 +259,7 @@ I also added an option to make the minimize and maximize buttons greyscale becas
 
 So RedmondXP uses several CSS documents to assign the color of various elements and pulls them all into a primary CSS file called gtk.css in the gtk-3.0. I just set custom varriables to be called in the other documents, which you can see in gtk.css under the "custom colors" comment. The only files I touched are found in recolor-target/gtk-3.0/ so it should be easy to use something like  `grep -l varriablename *.css`  to see what I changed. The rest of the CSS files are unchanged. 
 
-I also edit the file themerc in xfce/ since it determines the color of test in your title bar. 
+I also edit the file themerc in xfce/ since it determines the color of text in your title bar. 
 
 
 # Credits
